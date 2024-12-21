@@ -15,7 +15,7 @@ public class PaymentsValidatorResource {
     @POST
     @Path("/")
     public RestResponse<PaymentValidatedDTO> validate(PaymentDTO paymentDTO) {
-        boolean approved = true;
+        boolean approved = new Random().nextBoolean();
 
         if (approved) {
             Log.info("Payment with amount " + paymentDTO.amount() + " approved");
